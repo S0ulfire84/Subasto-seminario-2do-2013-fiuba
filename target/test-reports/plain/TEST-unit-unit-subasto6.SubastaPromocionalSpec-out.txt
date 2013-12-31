@@ -1,0 +1,3 @@
+--Output from Funcionamiento basico--
+--Output from Ofertar extiende el tiempo en 30 segundos--
+--Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--

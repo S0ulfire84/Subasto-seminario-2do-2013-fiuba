@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Phenom" name="subasto6.SubastaPromocionalSpec" tests="3" time="1.125" timestamp="2013-12-22T19:11:15">
+  <properties />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="0.393" />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.241" />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.207" />
+  <system-out><![CDATA[--Output from Funcionamiento basico--
+--Output from Ofertar extiende el tiempo en 30 segundos--
+--Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+]]></system-out>
+  <system-err><![CDATA[--Output from Funcionamiento basico--
+--Output from Ofertar extiende el tiempo en 30 segundos--
+--Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+]]></system-err>
+</testsuite>
