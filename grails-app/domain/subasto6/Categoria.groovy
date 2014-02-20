@@ -8,6 +8,7 @@ class Categoria {
 	int tiempoAExtenderEnSegundosPorOferta = 30 // por default cada vez que se oferta, el tiempo se extiende en 30 segundos
 	BigDecimal descuentoOptimo = 0.1; // por default, el descuento es del 10%, o sea que sale un 90% del precio elegido por el vendedor 
 	BigDecimal densidadPromedioDeOfertas = 10;
+	BigDecimal cantidadDeOfertasPromedio = 3;
 	
     public Categoria(String nombre) {
 		super();
@@ -20,6 +21,26 @@ class Categoria {
 	def void actualizarDensidadPromedioDeOfertasConNuevoDato(BigDecimal nuevaDensidad) {
 		BigDecimal porcentajeVariacion = 0.2
 		densidadPromedioDeOfertas = densidadPromedioDeOfertas * (1-porcentajeVariacion) + nuevaDensidad * porcentajeVariacion
+		
+		try {
+			save flush:true
+		} catch (MissingMethodException e) {
+			// Esto es porque los mocks de los tests parece que no pueden hacer save()
+		}
+		
+	}
+	
+	def actualizarCantidadDeOfertasPromedioConNuevoDato(int cantidadDeOfertas) {
+		// Afecto la cantidad de segundos por oferta de la categoria en un 20% de lo sucedido en esta subasta
+		BigDecimal porcentajeVariacion = 0.2
+		
+		cantidadDeOfertasPromedio = Math.round(cantidadDeOfertasPromedio * (1-porcentajeVariacion) + cantidadDeOfertas * porcentajeVariacion);
+		
+		try {
+			save flush:true
+		} catch (MissingMethodException e) {
+			// Esto es porque los mocks de los tests parece que no pueden hacer save()
+		}
 	}
 	
 	def actualizarTiempoOfertaConNuevoDato(Timestamp finalizacionOriginal, Timestamp finalizacionExtendida, int cantidadDeOfertasRealizadas) {
@@ -28,12 +49,20 @@ class Categoria {
 		
 		long segundosTotalesExtendidos = segundosFinExtendida - segundosFinOriginal;
 		
-		int cantidadDeSegundosPorOferta = segundosTotalesExtendidos/cantidadDeOfertasRealizadas;
+		int cantidadDeSegundosPorOferta = segundosTotalesExtendidos/cantidadDeOfertasPromedio;
 		
 		// Afecto la cantidad de segundos por oferta de la categoria en un 20% de lo sucedido en esta subasta
 		BigDecimal porcentajeVariacion = 0.2
 		
 		tiempoAExtenderEnSegundosPorOferta = Math.round(tiempoAExtenderEnSegundosPorOferta * (1-porcentajeVariacion) + cantidadDeSegundosPorOferta * porcentajeVariacion);
+		
+		try {
+			save flush:true
+		} catch (MissingMethodException e) {
+			// Esto es porque los mocks de los tests parece que no pueden hacer save()
+		}
+		
+		
 	}
 	
 	def actualizarDescuentoOptimoConNuevoDato(BigDecimal densidadDeOfertasDelNuevoDato, BigDecimal precioVentaFinal, BigDecimal valorEsperadoVentaFinal) {
@@ -50,11 +79,20 @@ class Categoria {
 			
 			BigDecimal descuentoOptimoNuevoDato = descuentoOptimo + descuentoOptimo * (densidadPromedioDeOfertas - densidadDeOfertasDelNuevoDato)/Math.max(densidadDeOfertasDelNuevoDato, densidadPromedioDeOfertas)		
 
+			
 			// Aun asi, toda esa informacion se pondera a un 20% para que una subasta sola no afecte completamente el estimador de la categoria.
 			
-			BigDecimal porcentajeVariacion = 0.2
+			BigDecimal porcentajeVariacion = 1//0.2
 			descuentoOptimo = descuentoOptimo * (1-porcentajeVariacion) + porcentajeVariacion * descuentoOptimoNuevoDato;
 			
+			System.out.println("descuentoOptimoNuevoDato: "+descuentoOptimoNuevoDato);
+			System.out.println("descuentoOptimo: "+descuentoOptimo);
+			
+			try {
+			save flush:true
+			} catch (MissingMethodException e) {
+				// Esto es porque los mocks de los tests parece que no pueden hacer save()
+			}
 		}
 		
 	}

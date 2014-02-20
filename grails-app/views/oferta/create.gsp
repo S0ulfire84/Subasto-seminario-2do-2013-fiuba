@@ -28,7 +28,24 @@
 			</g:hasErrors>
 			<g:form action="save" >
 				<fieldset class="form">
-					<f:all bean="ofertaInstance"/>
+					<!-- <f:all bean="ofertaInstance"/> -->
+					
+				- 	<f:with bean="subasta">
+				        <f:field property="titulo"/>
+				        <f:field property="descripcion"/>
+				        
+				        <fieldset class="embedded finalizacion">
+						   <legend>Address</legend>
+						   <f:field property="finalizacion.day"/>
+						   <f:field property="finalizacion.month"/>
+						   <f:field property="finalizacion.year"/>
+						</fieldset>
+				        
+				    </f:with>
+				    
+				   
+					
+					
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

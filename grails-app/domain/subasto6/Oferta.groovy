@@ -1,17 +1,17 @@
 package subasto6
 
+import java.sql.Time;
 import java.sql.Timestamp
+import java.util.Formatter.DateTime;
 
 class Oferta {
 
 	double valor;
-	Timestamp fechaYHora; 
+	Time fechaYHora; 
 	Usuario ofertante;
 	
-	//static belongsTo = [subasta:Subasta]
-	
 	def Oferta(double valorOfertado, Usuario quienOferta) {
-		fechaYHora = new Timestamp( new Date().getTime() ); 
+		fechaYHora = new Time( new Date().getTime() ); 
 		ofertante = quienOferta;
 		valor = valorOfertado;
 	}

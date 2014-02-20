@@ -315,8 +315,8 @@ class SubastaSpec extends Specification {
 			Timestamp haceDiezSegundos = new Timestamp (ahora - 10 * 1000); //10 segundos antes
 			Timestamp dentroDeDiezSegundos = new Timestamp ( ahora + 10 * 1000); //10 segundos antes
 			
-			Subasta s1 = new Subasta(vendedor:jose, precioBase:10, finalizacion:dentroDeDiezSegundos);
-			Subasta s2 = new Subasta(vendedor:jose, precioBase:10, finalizacion:dentroDeDiezSegundos);
+			Subasta s1 = new Subasta(vendedor:jose, precioBase:10, finalizacion:dentroDeDiezSegundos, titulo: "Subasta calificaciones contrarias");
+			Subasta s2 = new Subasta(vendedor:jose, precioBase:10, finalizacion:dentroDeDiezSegundos, titulo: "Subasta calificaciones iguales");
 		
 			s1.ofertarAValor(20, pepe)
 			s2.ofertarAValor(20, pepe)

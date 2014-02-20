@@ -68,7 +68,9 @@ grails.project.dependency.resolution = {
 		compile ':fields:1.3'
 		compile ":twitter-bootstrap:3.0.2"
 		
-		compile ":mail:1.0.1"
+		compile ":calendar:1.2.1"
+		
+		//compile ":mail:1.0.1"
 		
 		//compile ":kickstart-with-bootstrap:1.0.0"
 		

@@ -1,5 +1,5 @@
 Testsuite: subasto6.SubastaSpec
-Tests run: 17, Failures: 0, Errors: 0, Time elapsed: 1,541 sec
+Tests run: 17, Failures: 0, Errors: 0, Time elapsed: 1,38 sec
 ------------- Standard Output ---------------
 --Output from Creacion de una subasta--
 --Output from Probando ofertar y subir el precio actual--
@@ -39,20 +39,20 @@ Tests run: 17, Failures: 0, Errors: 0, Time elapsed: 1,541 sec
 --Output from Si las razones de las calificaciones difieren, enviar mail a administrador--
 ------------- ---------------- ---------------
 
-Testcase: Creacion de una subasta took 0,129 sec
-Testcase: Probando ofertar y subir el precio actual took 0,068 sec
-Testcase: Probando ofertar menos que el precio actual took 0,041 sec
-Testcase: Viendo quien va ganando actualmente took 0,046 sec
-Testcase: Probando con mas de un ofertante took 0,054 sec
-Testcase: Prueba basica de oferta automatica took 0,067 sec
-Testcase: Prueba con un ofertante automatico y uno normal took 0,051 sec
-Testcase: Dos ofertas automaticas se pelean entre si took 0,065 sec
-Testcase: Pepito no supera su maximo took 0,065 sec
-Testcase: El mejor sigue ganando took 0,065 sec
-Testcase: Tres automaticos took 0,076 sec
-Testcase: Una oferta mejor gana, aunque hayan automaticas took 0,054 sec
-Testcase: Subasta esta finalizada took 0,05 sec
-Testcase: Solo se puede ofertar si la subasta no finalizo took 0,05 sec
-Testcase: Antes de terminar la subasta no se puede calificar y solo si hay un comprador took 0,05 sec
-Testcase: Si ya califico, no puede volver a calificar took 0,081 sec
-Testcase: Si las razones de las calificaciones difieren, enviar mail a administrador took 0,053 sec
+Testcase: Creacion de una subasta took 0,126 sec
+Testcase: Probando ofertar y subir el precio actual took 0,063 sec
+Testcase: Probando ofertar menos que el precio actual took 0,029 sec
+Testcase: Viendo quien va ganando actualmente took 0,034 sec
+Testcase: Probando con mas de un ofertante took 0,04 sec
+Testcase: Prueba basica de oferta automatica took 0,046 sec
+Testcase: Prueba con un ofertante automatico y uno normal took 0,033 sec
+Testcase: Dos ofertas automaticas se pelean entre si took 0,046 sec
+Testcase: Pepito no supera su maximo took 0,043 sec
+Testcase: El mejor sigue ganando took 0,043 sec
+Testcase: Tres automaticos took 0,048 sec
+Testcase: Una oferta mejor gana, aunque hayan automaticas took 0,037 sec
+Testcase: Subasta esta finalizada took 0,04 sec
+Testcase: Solo se puede ofertar si la subasta no finalizo took 0,03 sec
+Testcase: Antes de terminar la subasta no se puede calificar y solo si hay un comprador took 0,037 sec
+Testcase: Si ya califico, no puede volver a calificar took 0,091 sec
+Testcase: Si las razones de las calificaciones difieren, enviar mail a administrador took 0,065 sec

@@ -33,7 +33,7 @@ class BootStrap {
 		
 		s1.ofertar(10, lopez)
 		
-		s1.save();
+		//s1.save();
 		
 		
 		

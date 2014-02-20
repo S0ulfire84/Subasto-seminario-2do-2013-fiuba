@@ -2,17 +2,19 @@ package subasto6
 
 import java.sql.Timestamp
 
-
 class Subasta {
 	
-	String titulo; // Requerido
-	String descripcion; // Requerido
+	// Todos los atributos son requeridos
+	String titulo; 
+	String descripcion;
 	
-	BigDecimal precioBase; // Requerido
-	Timestamp finalizacion = new Timestamp(2100,1,1,1,1,1,1); //Requerido
-	Usuario vendedor; // Requerido
-	Categoria categoria; // Requerido
+	BigDecimal precioBase;
+	Date finalizacion = new Date(2100,1,1)
+	Usuario vendedor;
+	Categoria categoria;
 	
+	
+	// Ofertas y OfertaAutomaticas que se hicieron en esta subasta
 	List ofertasRealizadas = [];
 	List ofertasAutomaticas = [];
 	
@@ -25,7 +27,6 @@ class Subasta {
 		titulo blank:false
 		descripcion blank:false
 		
-		//ofertasRealizadas display:false
 		ofertasAutomaticas display:false
 		
 		precioBase blank:false
@@ -62,6 +63,7 @@ class Subasta {
 		return finalizada;
 	}
 	
+	// Marca la subasta como finalizada y crea la transaccion de finalizacion
 	def void finalizarSubasta() {
 		subastaEstaMarcadaComoFinalizada = true;
 		
@@ -73,20 +75,28 @@ class Subasta {
 			System.out.println ("Creando la transaccion!")
 			
 			transaccionDeCompra = new Transaccion(comprador: (this.ofertaGanadoraActual()).ofertante, vendedor: vendedor, subasta:this );
-			transaccionDeCompra.save flush:true;
+			
+			try {
+				transaccionDeCompra.save flush:true;
+			} catch (MissingMethodException e) {
+				// Esto es porque los mocks de los tests parece que no pueden hacer save()
+			}
 		}
 		
 		if (categoria != null) {
 			BigDecimal incremento = this.precioActual() - this.precioBase;
 			int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
-			//categoria.actualizarDensidadPromedioDeOfertasConNuevoDato(incremento, ofertasRealizadas )
 			categoria.actualizarDensidadPromedioDeOfertasConNuevoDato( this.densidadDePrecioActual() )
 		}
 	}
 	
+	// La densidad de precio es cuantos pesos subio el precio (en promedio) por cada oferta realizada.
+	// Sirve para recalcular las estadisticas de la categoria
 	def BigDecimal densidadDePrecioActual() {
 		BigDecimal incremento = this.precioActual() - this.precioBase;
 		int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
+		
+		if (ofertasRealizadas == 0) return 1;
 		
 		return incremento/ofertasRealizadas
 	}
@@ -106,6 +116,7 @@ class Subasta {
 	}
 	
 	def Boolean hayUnGanador() {
+		System.out.println("hayUnGanador() dice: "+ this.quienVaGanando()+" es diferente de null?");
 		return this.quienVaGanando() != null;
 	}
 	
@@ -144,15 +155,14 @@ class Subasta {
 		if ( this.estaFinalizada() ) return false
 		
 		Oferta o = new Oferta(precioActual()+incremento, ofertante)
-		//o.save flush:true
 		
 		ofertasRealizadas << o;
 		
-		
-		this.save flush:true
-		
-		//BigDecimal precio = precioActual();
-		//System.out.println(ofertante.username+" oferta "+precio+". Viene ganando "+ofertaGanadoraActual().ofertante.username) 
+		try {
+			this.save flush:true
+		} catch (MissingMethodException e) {
+			// Esto es porque los mocks de los tests parece que no pueden hacer save()
+		}
 		
 		notificarAOfertasAutomaticas();
 		
@@ -182,7 +192,7 @@ class Subasta {
 	
 	
 	def Boolean ofertarAutomaticamente(double tope, double incremento, Usuario ofertante) {
-		ofertasAutomaticas << new OfertaAutomatica(tope, incremento, ofertante, this)//new OfertaAutomatica(tope:tope, incremento:incremento, usuario:ofertante);
+		ofertasAutomaticas << new OfertaAutomatica(tope, incremento, ofertante, this)
 		
 		notificarAOfertasAutomaticas()
 		

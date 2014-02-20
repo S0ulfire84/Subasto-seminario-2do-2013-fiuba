@@ -28,7 +28,40 @@
 			</g:hasErrors>
 			<g:form action="save" >
 				<fieldset class="form">
-					<f:all bean="subastaInstance"/>
+<%--					<f:all bean="subastaInstance"/>--%>
+
+
+					<f:with bean="subastaInstance">
+				        <f:field property="titulo"/>
+				        
+				        <f:field property="precioBase"/>
+				        				        
+				        <g:if test="${ usuarioLogueado != null }">
+				        	<g:hiddenField name="vendedor" value="${ usuarioLogueado.id }" />
+				        </g:if>
+				        <g:else>
+				        	<f:field property="vendedor"/>	
+				        </g:else>
+				        
+				        <f:field property="categoria"/>
+				        
+				    </f:with>
+
+				<div class="fieldcontain required">
+					<label for='descripcion'>
+						Descripcion<span class='required-indicator'>*</span>
+					</label>
+					<g:textArea name="descripcion" value="" rows="5" cols="40" required="true"/>
+				</div>
+				
+				<div class="fieldcontain required">
+				
+				<label for='descripcion'>
+					Fecha y hora de finalizacion:<span class='required-indicator'>*</span>
+				</label>
+				
+					<g:datePicker name="finalizacion" value="${new Date()}" relativeYears="[0..1]"/>
+				</div>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

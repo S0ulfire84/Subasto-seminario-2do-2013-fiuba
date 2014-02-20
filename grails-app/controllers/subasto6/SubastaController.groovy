@@ -45,6 +45,10 @@ class SubastaController {
         respond Subasta.list(params), model:[subastaInstanceCount: Subasta.count(), usuarios:Usuario.findAll(), usuarioLogueado:usuarioLogueado ]
     }
 
+	def list() {
+		redirect action:"index"
+	}
+	
     def show(Subasta subastaInstance) {
 		
 		if (params.selectUsuario != null) {
@@ -55,7 +59,7 @@ class SubastaController {
 			redirect subastaInstance
 		}
 		
-		usuarios = Usuario.findAll()//.minus(usuarioLogueado)
+		usuarios = Usuario.findAll()
 		
 		def subastaFinalizada = subastaInstance.estaFinalizada()
 		
@@ -65,8 +69,6 @@ class SubastaController {
 		def tieneQueCalificarVendedor  = subastaInstance.puedeCalificarVendedor() && usuarioLogueado?.esGanadorDeLaSubasta(subastaInstance)
 		
 		[estadosPosiblesTransaccion: estadosPosiblesTransaccion, tieneQueCalificarComprador:tieneQueCalificarComprador, tieneQueCalificarVendedor: tieneQueCalificarVendedor, subastaInstance:subastaInstance, usuarios : usuarios, subastaFinalizada: subastaFinalizada, usuarioLogueado: usuarioLogueado]
-		
-        //respond subastaInstance
 		
     }
 	
@@ -112,16 +114,11 @@ class SubastaController {
 	
 	def oferta(Subasta subastaInstance) {
 		
-		BigInteger oferta = new BigInteger(params.inputOferta);
+		int of = params.inputOferta.toFloat().toInteger().intValue()
+		
+		BigInteger oferta = new BigInteger(of);
 		
 		Usuario usuario = Usuario.findByUsername(params.selectUsuario)//Usuario.getAt(params.selectUsuario)//new BigInteger(params.selectUsuario);
-		
-		
-		
-		//Usuario user = Usuario.fi
-		//Usuario lopez = Usuario.findByUsername("Pepe123")
-		//subastaInstance.ofertar(25, lopez);
-		//subastaInstance.save(flush:true)
 		
 		String mensaje;
 		
@@ -137,17 +134,25 @@ class SubastaController {
 		
 		request.withFormat {
 			form {
-				flash.message = mensaje// "Se ha ofertado exitosamente."//message(code: 'default.oferta.message', args: [message(code: 'subastaInstance.label', default: 'Subasta'), subastaInstance.id])
+				flash.message = mensaje
 				redirect subastaInstance
 			}
 			'*' { respond subastaInstance }
 		}
 		
-		//redirect subastaInstance
 	}
 
     def create() {
-        respond new Subasta(params)
+		
+		if (params.selectUsuario != null) {
+			Usuario usuario = Usuario.findByUsername(params.selectUsuario)
+			usuarioLogueado = usuario;
+			session["usuario"] = usuarioLogueado
+			
+			redirect controller:"subasta", action:"create"
+		}
+		
+		[subastaInstance: new Subasta(params), usuarioLogueado:usuarioLogueado, usuarios:Usuario.findAll()]
     }
 
     @Transactional

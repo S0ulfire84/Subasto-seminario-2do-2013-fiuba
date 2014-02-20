@@ -50,3 +50,11 @@
 	<g:select id="categoria" name="categoria.id" from="${subasto6.Categoria.list()}" optionKey="id" required="" value="${subastaInstance?.categoria?.id}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: subastaInstance, field: 'ofertasRealizadas', 'error')} ">
+	<label for="ofertasRealizadas">
+		<g:message code="subasta.ofertasRealizadas.label" default="Ofertas Realizadas" />
+		
+	</label>
+	<g:select name="ofertasRealizadas" from="${subasto6.Oferta.list()}" multiple="multiple" optionKey="id" size="5" value="${subastaInstance?.ofertasRealizadas*.id}" class="many-to-many"/>
+</div>
+

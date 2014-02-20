@@ -9,6 +9,7 @@ class SubastaPromocional extends Subasta {
 	BigDecimal porcentajeDeGananciaEsperadaSobreElPrecioBase = 0.2;
 	
     static constraints = {
+		finalizacionOriginal nullable:true, blank:true
     }
 	public String porcentajeDescuento() {
 		return Math.round((categoria?.descuentoOptimo)*100)+"%"
@@ -36,12 +37,6 @@ class SubastaPromocional extends Subasta {
 	}
 
 	@Override
-	public Boolean ofertarAValor(double valorDeLaOferta, Usuario ofertante) {
-		this.extenderTiempoSegunCategoria();
-		return super.ofertarAValor(valorDeLaOferta, ofertante);
-	}
-
-	@Override
 	public Boolean ofertarAutomaticamente(double tope, double incremento,
 			Usuario ofertante) {
 		this.extenderTiempoSegunCategoria();
@@ -51,12 +46,10 @@ class SubastaPromocional extends Subasta {
 	def void extenderTiempoSegunCategoria() {
 		if (this.categoria != null) {
 
-			//long ahora = System.currentTimeMillis();
-
 			long tiempoFinalizacion = finalizacion.getTime();
 			
 			Timestamp tiempoExtendido = new Timestamp (tiempoFinalizacion + categoria.tiempoAExtenderEnSegundosPorOferta * 1000);
-			
+
 			if (finalizacionOriginal == null) finalizacionOriginal = finalizacion
 			finalizacion = tiempoExtendido;
 		}
@@ -69,10 +62,9 @@ class SubastaPromocional extends Subasta {
 		
 		if ( hayUnGanador() ) {
 			categoria.actualizarTiempoOfertaConNuevoDato( tiempoFinalizacionOriginal(), finalizacion, cantidadDeOfertasRealizadas() );
-			//categoria.actualizarDescuentoOptimoConNuevoDato(porcentajeDeGananciaEsperadaSobreElPrecioBase, this.precioActual(), this.valorFinalEsperado(), this.cantidadDeOfertasRealizadas() )
 			categoria.actualizarDescuentoOptimoConNuevoDato(this.densidadDePrecioActual(), precioActual(), valorFinalEsperado() )
+			categoria.actualizarCantidadDeOfertasPromedioConNuevoDato(cantidadDeOfertasRealizadas() )
 		}
-		
 		super.finalizarSubasta();
 	}
 	

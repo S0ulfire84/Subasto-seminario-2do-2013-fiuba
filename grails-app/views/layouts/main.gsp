@@ -51,14 +51,6 @@
 				<ul class="dropdown-menu" role="menu">
 				    <li><g:link controller="usuario" action="miSubasto" absolute="true">Ir a Mi Subasto</g:link></li>
 				</ul>
-			
-				<!-- <div class="dropdown-menu" role="menu">
-				  <a data-toggle="dropdown" href="#"> <p style="color:black"><strong>Usuario: ${ usuarioLogueado.username } </strong><span class="badge">42</span></p> </a>
-				  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-				  	<li>Test 1</li>
-				  	<li>Test 2</li>
-				  </ul>
-				</div>-->
 				
 				</div>
 			</g:if>
@@ -72,6 +64,7 @@
 			
 			
 		</div>
+		 
 		
 		<div id="grailsLogo" role="banner"><a href="/Subasto6"><img src="${resource(dir: 'images', file: 'logo.png')}" alt="Grails"/></a></div>
 		
@@ -92,9 +85,7 @@
 		
 		<script type="text/javascript">
 			/*$( document ).ready(function() {
-
-				
-				
+				alert("lolo");
 			});*/
 
 			$("#selectUsuario").change(function() {

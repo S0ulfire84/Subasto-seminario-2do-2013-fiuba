@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Phenom" id="0" name="OfertaSpec" package="subasto6" tests="1" time="1.156" timestamp="2013-12-22T19:11:14">
+  <testsuite errors="0" failures="0" hostname="Phenom" id="0" name="OfertaSpec" package="subasto6" tests="1" time="1.446" timestamp="2014-02-18T19:26:02">
       <properties />
 
-      <testcase classname="subasto6.OfertaSpec" name="Probando crear una oferta..." time="0.876" />
+      <testcase classname="subasto6.OfertaSpec" name="Probando crear una oferta..." time="1.13" />
 
       <system-out><![CDATA[--Output from Probando crear una oferta...--
 ]]></system-out>
@@ -12,14 +12,14 @@
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Phenom" id="1" name="SubastaPromocionalSpec" package="subasto6" tests="3" time="1.125" timestamp="2013-12-22T19:11:15">
+  <testsuite errors="0" failures="0" hostname="Phenom" id="1" name="SubastaPromocionalSpec" package="subasto6" tests="3" time="1.094" timestamp="2014-02-18T19:26:04">
       <properties />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="0.393" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="0.424" />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.241" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.183" />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.207" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.2" />
 
       <system-out><![CDATA[--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
@@ -32,42 +32,42 @@
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Phenom" id="2" name="SubastaSpec" package="subasto6" tests="17" time="1.541" timestamp="2013-12-22T19:11:17">
+  <testsuite errors="0" failures="0" hostname="Phenom" id="2" name="SubastaSpec" package="subasto6" tests="17" time="1.38" timestamp="2014-02-18T19:26:05">
       <properties />
 
-      <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.129" />
+      <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.126" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.068" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.063" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.041" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.029" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.046" />
+      <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.034" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.054" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.04" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.067" />
+      <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.046" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.051" />
+      <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.033" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.065" />
+      <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.045" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.065" />
+      <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.043" />
 
-      <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.065" />
+      <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.043" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.076" />
+      <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.048" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.054" />
+      <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.037" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.05" />
+      <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.04" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.05" />
+      <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.03" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.05" />
+      <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.037" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.081" />
+      <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.091" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.053" />
+      <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.065" />
 
       <system-out><![CDATA[--Output from Creacion de una subasta--
 --Output from Probando ofertar y subir el precio actual--

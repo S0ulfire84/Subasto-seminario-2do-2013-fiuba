@@ -1,5 +1,5 @@
 Testsuite: subasto6.SubastaPromocionalSpec
-Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 1,125 sec
+Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 1,094 sec
 ------------- Standard Output ---------------
 --Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
@@ -11,6 +11,6 @@ Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 1,125 sec
 --Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
 ------------- ---------------- ---------------
 
-Testcase: Funcionamiento basico took 0,393 sec
-Testcase: Ofertar extiende el tiempo en 30 segundos took 0,241 sec
-Testcase: Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado took 0,207 sec
+Testcase: Funcionamiento basico took 0,424 sec
+Testcase: Ofertar extiende el tiempo en 30 segundos took 0,183 sec
+Testcase: Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado took 0,2 sec
