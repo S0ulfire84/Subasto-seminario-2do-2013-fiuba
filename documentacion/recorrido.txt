@@ -1,0 +1,71 @@
+1. Probar Subastas clasicas
+
+	1) Ir a SubastaController
+	
+		Pruebas basicas de la puja en la subasta clasica
+		####### ####### ## ## #### ## ## ####### #######
+	
+		* Zapatos negros nuevos
+		* Ver los detalles de la subasta y el conteo. 
+			Notar que la subasta inicia en el valor de 200, pero en el Bootstrap hay una oferta de jorgelopez por 10$
+			El precio base actual es 210$ y hay 1 oferta realizada, por jorgelopez (la del Bootstrap)
+			
+		* Ofertar con Pepe123, notar que la oferta minima es de 220$.
+		
+		* Ver que ahora hay 2 ofertas realizadas, Pepe123 va ganando y el precio base es de 220$.
+		
+		* Ofertar con Jorgelopez, notar que ahora esta en 230$.
+		
+		* Ofertar automaticamente con Pepe123 por un valor de 400$. 
+			Notar que ahora esta en 240 (a pesar de poner 400) y hay 4 ofertas
+		
+		* Ofertar con Jorgelopez 250, ver como pepe123 sigue ganando y hay 6 ofertas (la de jorgelopez y la automatica de pepe123)
+			Ahora esta en 260
+			
+		* Ofertar con Jorgelopez 300 y ver que pepe123 sigue ganando y hay 8 ofertas
+		
+		* Realizar una oferta fuera de tiempo, verificar que no se procesa y que ya no aparece el boton de ofertar
+		
+	2) Una vez finalizada la subasta, cambiar el usuario a Josepe (el vendedor). 
+	
+		* Notar que aparece el dialogo de calificacion
+		
+		* Si se ignora el dialogo y se carga de nuevo, se pregunta de nuevo
+		
+		* Si clickeo en el logo de Subasto y voy a TransaccionController, puedo ver la transaccion que se creo al finalizar la subasta y ver que esta en un estado inicial
+		
+		* Si clickeo en el usuario arriba puedo ir a "Mi Subasto" donde veo las tareas pendientes del usuario 
+		  y las calificaciones recibidas
+		
+		* Calificar al comprador negativamente, indicando que el comprador no se contacto
+		
+		* Si voy a TransaccionController puedo ver que cambio el estado de la transaccion
+		
+		* Ir a Mi Subasto
+		
+		* Comprobar que ya no tengo tareas pendientes pero tampoco tengo calificaciones
+		
+		* Cambiar el usuario al ganador, verificar que esta la tarea pendiente y que no puede ver la calificacion de Josepe 
+		(el vendedor) hasta que no haga el su calificacion.
+		
+		* Calificar al vendedor positivamente, indicando que se concreto la operacion correctamente
+		
+		* Ir a Mi Subasto y ver que ahora si aparece la calificacion del vendedor
+		
+		* Cambiar el usuario a Josepe y ver que aparece la calificacion del comprador tambien
+		
+		* Cambiar el usuario al tercero que no participo y ver que no tiene actividad
+		
+		* Clickear en el logo de Subasto y dirigirse al AdvertenciaController, comprobar que la calificacion contraria
+		genero una advertencia en el sistema
+
+2. Probar Subastas promocionales
+
+	1) Clickear en el logo y dirigirse a CategoriaController, ver los parametros de la categoria. Explicar los parametros.
+	
+		Notar que la categoria tiene (si no se hizo nada): densidad promedio de ofertas: 10$. Descuento optimo: 10%, tiempo
+		a extender por oferta, 30 segundos
+	
+	2) Ir a la home y a SubastaPromocionalController y crear una nueva subasta promocional. Ver como se actualizan los datos al ir modificando los parametros de la subasta promocional. Usar un precio de 3000$ para que sea mas facil manejarse sin superar los limites. El precio base ofrecido es 2700 y se espera vender por 3600$
+	
+	3) 
