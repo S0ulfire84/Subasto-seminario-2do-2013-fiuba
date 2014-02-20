@@ -16,6 +16,7 @@ class Categoria {
     }
 
 	static constraints = {
+		descuentoOptimo (nullable: false, min: 0.0, max: 1.0, scale: 2)
     }
 	
 	def void actualizarDensidadPromedioDeOfertasConNuevoDato(BigDecimal nuevaDensidad) {
@@ -82,7 +83,7 @@ class Categoria {
 			
 			// Aun asi, toda esa informacion se pondera a un 20% para que una subasta sola no afecte completamente el estimador de la categoria.
 			
-			BigDecimal porcentajeVariacion = 1//0.2
+			BigDecimal porcentajeVariacion = 0.2
 			descuentoOptimo = descuentoOptimo * (1-porcentajeVariacion) + porcentajeVariacion * descuentoOptimoNuevoDato;
 			
 			System.out.println("descuentoOptimoNuevoDato: "+descuentoOptimoNuevoDato);

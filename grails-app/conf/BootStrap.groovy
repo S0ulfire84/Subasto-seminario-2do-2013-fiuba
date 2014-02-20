@@ -22,13 +22,14 @@ class BootStrap {
 		
 		Timestamp dentroDeUnaHora = new Timestamp (ahora + 1 * 60 * 60 * 1000); //Dentro de una hora
 		Timestamp dentroDeMedioMinuto = new Timestamp (ahora + 30 * 1000); //Dentro de medio minuto
+		Timestamp dentroDeDosMinutos = new Timestamp (ahora + 60 * 2 * 1000); //Dentro de dos minutos
 		
 		Categoria calzado = new Categoria("Calzado")
 		calzado.save()
 		
 		String descripcion = "Buenisimos zapatos de primera marca importados de Noruega en todos los talles. Colores en rojo, marron, negro, azul, blancos y grises. Consultar por otros modelos."
 		
-		Subasta s1 = new Subasta("Zapatos negros nuevos", descripcion , 200, dentroDeMedioMinuto, jose, calzado)
+		Subasta s1 = new Subasta("Zapatos negros nuevos", descripcion , 200, dentroDeDosMinutos, jose, calzado)
 		s1.save();
 		
 		s1.ofertar(10, lopez)

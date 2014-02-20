@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Phenom" name="subasto6.SubastaPromocionalSpec" tests="3" time="1.094" timestamp="2014-02-18T19:26:04">
+<testsuite errors="0" failures="0" hostname="Air.local" name="subasto6.SubastaPromocionalSpec" tests="3" time="4.283" timestamp="2014-02-20T14:23:17">
   <properties />
-  <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="0.424" />
-  <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.183" />
-  <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.2" />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="1.734" />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.963" />
+  <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.841" />
   <system-out><![CDATA[--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
 --Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--

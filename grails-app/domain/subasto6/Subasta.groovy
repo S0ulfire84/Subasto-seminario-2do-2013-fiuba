@@ -56,7 +56,6 @@ class Subasta {
 		Boolean finalizada = finalizacion.compareTo(new Timestamp( new Date().getTime() )) < 0; 
 		
 		if (finalizada && !subastaEstaMarcadaComoFinalizada) {
-			System.out.println ("llamando a Finalizar Subasta!")
 			finalizarSubasta();
 		}
 		
@@ -72,8 +71,6 @@ class Subasta {
 		// Si esta finalizada y hay un ganador pero no hay asignada una transaccion de compra, asignarle la transaccion de compra al ganador
 		if ( hayUnGanador() && this.transaccionDeCompra == null ) {
 			
-			System.out.println ("Creando la transaccion!")
-			
 			transaccionDeCompra = new Transaccion(comprador: (this.ofertaGanadoraActual()).ofertante, vendedor: vendedor, subasta:this );
 			
 			try {
@@ -87,6 +84,7 @@ class Subasta {
 			BigDecimal incremento = this.precioActual() - this.precioBase;
 			int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
 			categoria.actualizarDensidadPromedioDeOfertasConNuevoDato( this.densidadDePrecioActual() )
+			System.out.println("estoy actualizando la densidad promedio de ofertas al finalizar subasta con "+this.densidadDePrecioActual() )
 		}
 	}
 	
@@ -97,7 +95,7 @@ class Subasta {
 		int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
 		
 		if (ofertasRealizadas == 0) return 1;
-		
+	
 		return incremento/ofertasRealizadas
 	}
 	
@@ -116,7 +114,6 @@ class Subasta {
 	}
 	
 	def Boolean hayUnGanador() {
-		System.out.println("hayUnGanador() dice: "+ this.quienVaGanando()+" es diferente de null?");
 		return this.quienVaGanando() != null;
 	}
 	

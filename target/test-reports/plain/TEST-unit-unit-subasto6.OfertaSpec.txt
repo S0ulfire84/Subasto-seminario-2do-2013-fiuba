@@ -1,5 +1,5 @@
 Testsuite: subasto6.OfertaSpec
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 1,446 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3.33 sec
 ------------- Standard Output ---------------
 --Output from Probando crear una oferta...--
 ------------- ---------------- ---------------
@@ -7,4 +7,4 @@ Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 1,446 sec
 --Output from Probando crear una oferta...--
 ------------- ---------------- ---------------
 
-Testcase: Probando crear una oferta... took 1,13 sec
+Testcase: Probando crear una oferta... took 2.38 sec

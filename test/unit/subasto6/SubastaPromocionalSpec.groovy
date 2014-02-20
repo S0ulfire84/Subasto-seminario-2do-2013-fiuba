@@ -89,14 +89,10 @@ class SubastaPromocionalSpec extends Specification {
 			
 			
 		then:
-			//s.estaFinalizada() == true;
-			
 			// Hubo una oferta, el tiempo se extendio desde +10 seg a +40 seg pero al finalizarla la pisamos con -10seg, 
 			// entonces el tiempo entre el original (+10) y el tiempo extendido (-10) es de -20 seg. Esto afecta al tiempo
 			// de la categoria en un 20%, esto es un 80% de 30 seg y un 20% de -20 seg = 24 seg + -4 seg = 20 seg
 
-			//zapatos.tiempoAExtenderEnSegundosPorOferta == 20;
-			
 			// Se puso el precio base en 10, pero al ser una Subasta promocional, el precio base es de 9. 
 			// Se esperaba obtener un 20% sobre el valor base original, es decir, se puso a 10 pero y se esperaba que llegue a 12. 
 			// La densidad promedio de ofertas por default es de 10. 
