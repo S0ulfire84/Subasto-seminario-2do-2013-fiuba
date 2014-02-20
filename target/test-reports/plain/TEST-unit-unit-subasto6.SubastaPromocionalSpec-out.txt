@@ -1,3 +1,4 @@
 --Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--

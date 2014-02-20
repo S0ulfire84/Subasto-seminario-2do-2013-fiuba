@@ -24,6 +24,30 @@ El calculo del descuento optimo reside en ponderar ambas situaciones y generar u
 
 1- Si no llego a escalar demasiado porque estaba demasiado barato, lo que se observaria es que si bien hay muchas ofertas, el valor nunca logro alcanzar un valor cercano al esperado. La palabra clave son las muchas ofertas.
 
+Como medimos si hubieron "muchas ofertas" o "pocas ofertas"?
+
+imaginemos un producto de 1000 ofrecido a 800 y del que se espera ganar 1200. Al finalizar la subasta escala hasta un valor de 1100. No suficiente pero nada mal.
+
+Podriamos decir que un producto tuvo buenas ofertas si alcanzo a superar o alcanzar minimamente el precio sugerido.
+
+Si tuvo buenas ofertas pero no llego al valor esperado, hay que disminuir el descuento, se esta descontando demasiado.
+Si tuvo malas ofertas y no llego al valor esperado, hay que aumentar el descuento, no esta atrayendo suficiente.
+
+
+
+
+
+
+
+
+
+
+
+
+##### razonamientos viejos ####
+
+1- Si no llego a escalar demasiado porque estaba demasiado barato, lo que se observaria es que si bien hay muchas ofertas, el valor nunca logro alcanzar un valor cercano al esperado. La palabra clave son las muchas ofertas.
+
 Como medimos si hubieron "muchas ofertas" o "pocas ofertas"? A lo mejor al finalizar una subasta podemos llevar cuenta del promedio de cantidad de ofertas y monto promedio de esas ofertas y de los dos sacar un indice: monto/cantidad de ofertas = densidad de oferta promedio de la categoria.
 
 Entonces, si la densidad de ofertas es buena, pero aun asi se llego a un valor por debajo del esperado, el descuento debe hacerse mas chico (causa 1) para que no se ofrezca tan barato.
@@ -36,7 +60,6 @@ Entonces, si la densidad de ofertas es buena, pero aun asi se llego a un valor p
 CONCLUSIONES:
 * hay un valor esperado. El valor esperado es un porcentaje por arriba de la base.
 
-0800-1222747
 
 
 dens prom = 10
@@ -63,6 +86,9 @@ descOpt + (densProm - densNuevoDato)/densProm
 
 
 descOpt = descOpt + (densProm - densNuevoDato)/max(densProm, densNuevoDato)
+
+
+######################
 
 
 

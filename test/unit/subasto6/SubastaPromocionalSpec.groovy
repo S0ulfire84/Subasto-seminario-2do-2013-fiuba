@@ -66,7 +66,7 @@ class SubastaPromocionalSpec extends Specification {
 			
 	}
 	
-	void "Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado"() {
+	void "Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria"() {
 		when:
 			long ahora = System.currentTimeMillis();
 			
@@ -79,11 +79,11 @@ class SubastaPromocionalSpec extends Specification {
 						
 			Categoria zapatos = new Categoria("Zapatos")
 			
-			SubastaPromocional s = new SubastaPromocional(precioBase:10, vendedor:jose, finalizacion:dentroDeDiezSegundos, categoria:zapatos);
+			SubastaPromocional s = new SubastaPromocional(precioBase:3000, vendedor:jose, finalizacion:dentroDeDiezSegundos, categoria:zapatos);
 			s.asignarPrecioPromocion()
 			
-			s.ofertarAValor(10, pablo)
-			s.ofertarAValor(11, luis)
+			s.ofertarAValor(2800, pablo)
+			s.ofertarAValor(2900, luis)
 			
 			s.cambiarFinalizacionA(haceDiezSegundos)
 			
@@ -93,36 +93,57 @@ class SubastaPromocionalSpec extends Specification {
 			// entonces el tiempo entre el original (+10) y el tiempo extendido (-10) es de -20 seg. Esto afecta al tiempo
 			// de la categoria en un 20%, esto es un 80% de 30 seg y un 20% de -20 seg = 24 seg + -4 seg = 20 seg
 
-			// Se puso el precio base en 10, pero al ser una Subasta promocional, el precio base es de 9. 
-			// Se esperaba obtener un 20% sobre el valor base original, es decir, se puso a 10 pero y se esperaba que llegue a 12. 
-			// La densidad promedio de ofertas por default es de 10. 
-			// Al ejecutarse el remate, se hicieron dos ofertas, que llevaron el precio a un valor final de 11, no suficiente.
+			// El descuento default de la categoria es de un 10%. Esto es, se ofrece en 2700.
+			// Se esperaba obtener un 20% sobre el valor base original, asi que se espera obtener 3600.
 			
-			// Se obtuvo una densidad de 11-9/2 = 1.
-			// El descuento se altera proporcional a la diferencia entre el promedio y el obtenido.
-			// El promedio es 10. El obtenido es 1, por lo tanto, es 0.1 + 0.1 * (10-1)/10 = 0.1 + 0.09 = 0.19.
-			// Y este dato se toma solo en un 20% y se adosa al descuento optimo, que ahora seria de: 80% de 10 + 20% de 19 = 8+3.8 = 11.8
-			// Ligeramente por arriba del valor de descuento que se ofrecia antes.
-			s.precioBaseOriginal == 10
-			Math.round(s.precioBase) == 9
-			
-			s.valorFinalEsperado() == 12
+			// Hay dos ofertas, el precio final queda en 2900, menos que el precio base. 
+			// Entonces el descuento esta siendo poco atractivo y debe subir respecto del valor anterior.
 			
 			zapatos.descuentoOptimo == 0.1
-			zapatos.densidadPromedioDeOfertas == 10
-			s.precioActual() == 11
 			
-			s.densidadDePrecioActual() == 1
+			s.estaFinalizada() == true; // este es el punto que la finaliza
 			
-			s.estaFinalizada() == true;
-			
-			s.densidadDePrecioActual() == 1
-			 
-			aIgualAB(zapatos.descuentoOptimo, 0.118) //zapatos.descuentoOptimo == 0.118 //Uso esto porque Grails no entiende correctamente como comparar decimales
+			zapatos.descuentoOptimo > 0.1
 	}
 	
-	def Boolean aIgualAB(BigDecimal a, BigDecimal b) {
-		return Math.abs(a-b) < 0.0001
+	void "Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria"() {
+		when:
+			long ahora = System.currentTimeMillis();
+			
+			Usuario jose = new Usuario(nombre:"Jose", apellido:"Perez", username:"Josepe");
+			Usuario pablo = new Usuario(nombre:"Pablo", apellido:"Rodriguez", username:"pablo123");
+			Usuario luis = new Usuario(nombre:"Luis", apellido:"Gutierrez", username:"luisito");
+			
+			Timestamp dentroDeDiezSegundos = new Timestamp (ahora + 10 * 1000);
+			Timestamp haceDiezSegundos = new Timestamp (ahora - 10 * 1000);
+						
+			Categoria zapatos = new Categoria("Zapatos")
+			
+			SubastaPromocional s = new SubastaPromocional(precioBase:3000, vendedor:jose, finalizacion:dentroDeDiezSegundos, categoria:zapatos);
+			s.asignarPrecioPromocion()
+			
+			s.ofertarAValor(2800, pablo)
+			s.ofertarAValor(3100, luis)
+			
+			s.cambiarFinalizacionA(haceDiezSegundos)
+			
+			
+		then:
+			// Hubo una oferta, el tiempo se extendio desde +10 seg a +40 seg pero al finalizarla la pisamos con -10seg, 
+			// entonces el tiempo entre el original (+10) y el tiempo extendido (-10) es de -20 seg. Esto afecta al tiempo
+			// de la categoria en un 20%, esto es un 80% de 30 seg y un 20% de -20 seg = 24 seg + -4 seg = 20 seg
+
+			// El descuento default de la categoria es de un 10%. Esto es, se ofrece en 2700.
+			// Se esperaba obtener un 20% sobre el valor base original, asi que se espera obtener 3600.
+			
+			// Hay dos ofertas, el precio final queda en 2900, menos que el precio base. 
+			// Entonces el descuento esta siendo poco atractivo y debe subir respecto del valor anterior.
+			
+			zapatos.descuentoOptimo == 0.1
+			
+			s.estaFinalizada() == true; // este es el punto que la finaliza
+			
+			zapatos.descuentoOptimo < 0.1
 	}
 	
 }

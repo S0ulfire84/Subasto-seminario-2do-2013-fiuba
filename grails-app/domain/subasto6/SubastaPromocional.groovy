@@ -10,7 +10,8 @@ class SubastaPromocional extends Subasta {
 	
     static constraints = {
 		finalizacionOriginal nullable:true, blank:true
-    }
+    }
+
 	public String porcentajeDescuento() {
 		return Math.round((categoria?.descuentoOptimo)*100)+"%"
 	}
@@ -62,7 +63,7 @@ class SubastaPromocional extends Subasta {
 		
 		if ( hayUnGanador() ) {
 			categoria.actualizarTiempoOfertaConNuevoDato( tiempoFinalizacionOriginal(), finalizacion, cantidadDeOfertasRealizadas() );
-			categoria.actualizarDescuentoOptimoConNuevoDato(this.densidadDePrecioActual(), precioActual(), valorFinalEsperado() )
+			categoria.actualizarDescuentoOptimoConNuevoDato(precioBaseOriginal, precioActual(), valorFinalEsperado() )
 			categoria.actualizarCantidadDeOfertasPromedioConNuevoDato(cantidadDeOfertasRealizadas() )
 		}
 		super.finalizarSubasta();

@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list categoria">
 			
-				<g:if test="${categoriaInstance?.densidadPromedioDeOfertas}">
-				<li class="fieldcontain">
-					<span id="densidadPromedioDeOfertas-label" class="property-label"><g:message code="categoria.densidadPromedioDeOfertas.label" default="Densidad Promedio De Ofertas" /></span>
-					
-						<span class="property-value" aria-labelledby="densidadPromedioDeOfertas-label"><g:fieldValue bean="${categoriaInstance}" field="densidadPromedioDeOfertas"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${categoriaInstance?.descuentoOptimo}">
 				<li class="fieldcontain">
 					<span id="descuentoOptimo-label" class="property-label"><g:message code="categoria.descuentoOptimo.label" default="Descuento Optimo" /></span>
@@ -52,7 +43,7 @@
 			
 				<g:if test="${categoriaInstance?.tiempoAExtenderEnSegundosPorOferta}">
 				<li class="fieldcontain">
-					<span id="tiempoAExtenderEnSegundosPorOferta-label" class="property-label"><g:message code="categoria.tiempoAExtenderEnSegundosPorOferta.label" default="Tiempo AE xtender En Segundos Por Oferta" /></span>
+					<span id="tiempoAExtenderEnSegundosPorOferta-label" class="property-label"><g:message code="categoria.tiempoAExtenderEnSegundosPorOferta.label" default="Tiempo a Extender En Segundos Por Oferta" /></span>
 					
 						<span class="property-value" aria-labelledby="tiempoAExtenderEnSegundosPorOferta-label"><g:fieldValue bean="${categoriaInstance}" field="tiempoAExtenderEnSegundosPorOferta"/></span>
 					

@@ -24,13 +24,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="densidadPromedioDeOfertas" title="${message(code: 'categoria.densidadPromedioDeOfertas.label', default: 'Densidad Promedio De Ofertas')}" />
+						<g:sortableColumn property="nombre" title="${message(code: 'categoria.nombre.label', default: 'Nombre')}" />
 					
 						<g:sortableColumn property="descuentoOptimo" title="${message(code: 'categoria.descuentoOptimo.label', default: 'Descuento Optimo')}" />
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'categoria.nombre.label', default: 'Nombre')}" />
-					
-						<g:sortableColumn property="tiempoAExtenderEnSegundosPorOferta" title="${message(code: 'categoria.tiempoAExtenderEnSegundosPorOferta.label', default: 'Tiempo AE xtender En Segundos Por Oferta')}" />
+						<g:sortableColumn property="tiempoAExtenderEnSegundosPorOferta" title="${message(code: 'categoria.tiempoAExtenderEnSegundosPorOferta.label', default: 'Tiempo a extender en segundos por oferta')}" />
 					
 					</tr>
 				</thead>
@@ -38,11 +36,9 @@
 				<g:each in="${categoriaInstanceList}" status="i" var="categoriaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "densidadPromedioDeOfertas")}</g:link></td>
+						<td><g:link action="show" id="${categoriaInstance.id}">${fieldValue(bean: categoriaInstance, field: "nombre")}</g:link></td>
 					
 						<td>${fieldValue(bean: categoriaInstance, field: "descuentoOptimo")}</td>
-					
-						<td>${fieldValue(bean: categoriaInstance, field: "nombre")}</td>
 					
 						<td>${fieldValue(bean: categoriaInstance, field: "tiempoAExtenderEnSegundosPorOferta")}</td>
 					

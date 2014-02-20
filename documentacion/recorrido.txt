@@ -68,4 +68,6 @@
 	
 	2) Ir a la home y a SubastaPromocionalController y crear una nueva subasta promocional. Ver como se actualizan los datos al ir modificando los parametros de la subasta promocional. Usar un precio de 3000$ para que sea mas facil manejarse sin superar los limites. El precio base ofrecido es 2700 y se espera vender por 3600$
 	
-	3) 
+	3) Ofertar algunas veces por el producto pero sin que supere los 3000. Comprobar como sube el valor del descuento.
+	
+	4) Crear otra subasta promocional y ofertar de forma que supere los 3000 pero no los 3600. Comprobar como baja el valor del descuento.

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Air.local" name="subasto6.SubastaSpec" tests="17" time="4.416" timestamp="2014-02-20T14:23:21">
+<testsuite errors="0" failures="0" hostname="Air.local" name="subasto6.SubastaSpec" tests="17" time="4.2" timestamp="2014-02-20T19:36:07">
   <properties />
-  <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.185" />
-  <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.273" />
-  <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.188" />
-  <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.188" />
-  <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.152" />
-  <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.226" />
-  <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.182" />
-  <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.231" />
-  <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.148" />
-  <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.183" />
-  <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.154" />
-  <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.106" />
-  <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.137" />
-  <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.15" />
-  <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.142" />
-  <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.244" />
-  <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.268" />
+  <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.299" />
+  <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.247" />
+  <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.179" />
+  <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.256" />
+  <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.162" />
+  <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.149" />
+  <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.131" />
+  <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.152" />
+  <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.208" />
+  <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.181" />
+  <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.204" />
+  <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.242" />
+  <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.193" />
+  <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.107" />
+  <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.16" />
+  <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.207" />
+  <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.255" />
   <system-out><![CDATA[--Output from Creacion de una subasta--
 --Output from Probando ofertar y subir el precio actual--
 --Output from Probando ofertar menos que el precio actual--

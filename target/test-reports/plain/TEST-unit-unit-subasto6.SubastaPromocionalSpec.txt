@@ -1,16 +1,19 @@
 Testsuite: subasto6.SubastaPromocionalSpec
-Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 4.283 sec
+Tests run: 4, Failures: 0, Errors: 0, Time elapsed: 3.267 sec
 ------------- Standard Output ---------------
 --Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 ------------- ---------------- ---------------
 ------------- Standard Error -----------------
 --Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 ------------- ---------------- ---------------
 
-Testcase: Funcionamiento basico took 1.734 sec
-Testcase: Ofertar extiende el tiempo en 30 segundos took 0.964 sec
-Testcase: Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado took 0.841 sec
+Testcase: Funcionamiento basico took 1.477 sec
+Testcase: Ofertar extiende el tiempo en 30 segundos took 0.599 sec
+Testcase: Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria took 0.442 sec
+Testcase: Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria took 0.284 sec

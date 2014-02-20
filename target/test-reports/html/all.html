@@ -15,7 +15,7 @@
      - All tests </h1>
 <p class="intro">
                         Executed
-                        21
+                        22
                         tests
                     
                         without a single error or failure!
@@ -55,7 +55,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Probando crear una oferta...</b>
 </p>
-<p class="summary">Executed in 2.38 seconds.</p>
+<p class="summary">Executed in 2.047 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -79,7 +79,7 @@
 <h2>SubastaPromocionalSpec</h2>
 <h3>
                         Executed
-                        3
+                        4
                         tests
                     
                         without a single error or failure!
@@ -90,7 +90,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Funcionamiento basico</b>
 </p>
-<p class="summary">Executed in 1.734 seconds.</p>
+<p class="summary">Executed in 1.477 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -100,17 +100,27 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Ofertar extiende el tiempo en 30 segundos</b>
 </p>
-<p class="summary">Executed in 0.963 seconds.</p>
+<p class="summary">Executed in 0.599 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado</b>
+<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria</b>
 </p>
-<p class="summary">Executed in 0.841 seconds.</p>
+<p class="summary">Executed in 0.441 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria</b>
+</p>
+<p class="summary">Executed in 0.284 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -120,14 +130,16 @@
 <h2>Standard output</h2>
 <pre class="stdout">--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
 <pre class="syserr">--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 </pre>
 </div>
 </div>
@@ -149,7 +161,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Creacion de una subasta</b>
 </p>
-<p class="summary">Executed in 0.185 seconds.</p>
+<p class="summary">Executed in 0.299 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -159,7 +171,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Probando ofertar y subir el precio actual</b>
 </p>
-<p class="summary">Executed in 0.273 seconds.</p>
+<p class="summary">Executed in 0.247 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -169,7 +181,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Probando ofertar menos que el precio actual</b>
 </p>
-<p class="summary">Executed in 0.188 seconds.</p>
+<p class="summary">Executed in 0.179 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -179,7 +191,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Viendo quien va ganando actualmente</b>
 </p>
-<p class="summary">Executed in 0.188 seconds.</p>
+<p class="summary">Executed in 0.256 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -189,7 +201,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Probando con mas de un ofertante</b>
 </p>
-<p class="summary">Executed in 0.152 seconds.</p>
+<p class="summary">Executed in 0.162 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -199,7 +211,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Prueba basica de oferta automatica</b>
 </p>
-<p class="summary">Executed in 0.226 seconds.</p>
+<p class="summary">Executed in 0.149 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -209,7 +221,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Prueba con un ofertante automatico y uno normal</b>
 </p>
-<p class="summary">Executed in 0.182 seconds.</p>
+<p class="summary">Executed in 0.131 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -219,7 +231,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Dos ofertas automaticas se pelean entre si</b>
 </p>
-<p class="summary">Executed in 0.231 seconds.</p>
+<p class="summary">Executed in 0.152 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -229,7 +241,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Pepito no supera su maximo</b>
 </p>
-<p class="summary">Executed in 0.148 seconds.</p>
+<p class="summary">Executed in 0.208 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -239,7 +251,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">El mejor sigue ganando</b>
 </p>
-<p class="summary">Executed in 0.183 seconds.</p>
+<p class="summary">Executed in 0.181 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -249,7 +261,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Tres automaticos</b>
 </p>
-<p class="summary">Executed in 0.154 seconds.</p>
+<p class="summary">Executed in 0.204 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -259,7 +271,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Una oferta mejor gana, aunque hayan automaticas</b>
 </p>
-<p class="summary">Executed in 0.106 seconds.</p>
+<p class="summary">Executed in 0.242 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -269,7 +281,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Subasta esta finalizada</b>
 </p>
-<p class="summary">Executed in 0.137 seconds.</p>
+<p class="summary">Executed in 0.193 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -279,7 +291,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Solo se puede ofertar si la subasta no finalizo</b>
 </p>
-<p class="summary">Executed in 0.15 seconds.</p>
+<p class="summary">Executed in 0.107 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -289,7 +301,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Antes de terminar la subasta no se puede calificar y solo si hay un comprador</b>
 </p>
-<p class="summary">Executed in 0.142 seconds.</p>
+<p class="summary">Executed in 0.16 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -299,7 +311,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Si ya califico, no puede volver a calificar</b>
 </p>
-<p class="summary">Executed in 0.244 seconds.</p>
+<p class="summary">Executed in 0.207 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -309,7 +321,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Si las razones de las calificaciones difieren, enviar mail a administrador</b>
 </p>
-<p class="summary">Executed in 0.268 seconds.</p>
+<p class="summary">Executed in 0.255 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Air.local" id="0" name="OfertaSpec" package="subasto6" tests="1" time="3.33" timestamp="2014-02-20T14:23:13">
+  <testsuite errors="0" failures="0" hostname="Air.local" id="0" name="OfertaSpec" package="subasto6" tests="1" time="2.866" timestamp="2014-02-20T19:36:00">
       <properties />
 
-      <testcase classname="subasto6.OfertaSpec" name="Probando crear una oferta..." time="2.38" />
+      <testcase classname="subasto6.OfertaSpec" name="Probando crear una oferta..." time="2.047" />
 
       <system-out><![CDATA[--Output from Probando crear una oferta...--
 ]]></system-out>
@@ -12,62 +12,66 @@
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Air.local" id="1" name="SubastaPromocionalSpec" package="subasto6" tests="3" time="4.283" timestamp="2014-02-20T14:23:17">
+  <testsuite errors="0" failures="0" hostname="Air.local" id="1" name="SubastaPromocionalSpec" package="subasto6" tests="4" time="3.267" timestamp="2014-02-20T19:36:03">
       <properties />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="1.734" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Funcionamiento basico" time="1.477" />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.963" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Ofertar extiende el tiempo en 30 segundos" time="0.599" />
 
-      <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado" time="0.841" />
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria" time="0.441" />
+
+      <testcase classname="subasto6.SubastaPromocionalSpec" name="Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria" time="0.284" />
 
       <system-out><![CDATA[--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 ]]></system-out>
 
       <system-err><![CDATA[--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="Air.local" id="2" name="SubastaSpec" package="subasto6" tests="17" time="4.416" timestamp="2014-02-20T14:23:21">
+  <testsuite errors="0" failures="0" hostname="Air.local" id="2" name="SubastaSpec" package="subasto6" tests="17" time="4.2" timestamp="2014-02-20T19:36:07">
       <properties />
 
-      <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.185" />
+      <testcase classname="subasto6.SubastaSpec" name="Creacion de una subasta" time="0.299" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.273" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar y subir el precio actual" time="0.247" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.188" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando ofertar menos que el precio actual" time="0.179" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.188" />
+      <testcase classname="subasto6.SubastaSpec" name="Viendo quien va ganando actualmente" time="0.256" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.152" />
+      <testcase classname="subasto6.SubastaSpec" name="Probando con mas de un ofertante" time="0.162" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.226" />
+      <testcase classname="subasto6.SubastaSpec" name="Prueba basica de oferta automatica" time="0.149" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.182" />
+      <testcase classname="subasto6.SubastaSpec" name="Prueba con un ofertante automatico y uno normal" time="0.131" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.231" />
+      <testcase classname="subasto6.SubastaSpec" name="Dos ofertas automaticas se pelean entre si" time="0.152" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.148" />
+      <testcase classname="subasto6.SubastaSpec" name="Pepito no supera su maximo" time="0.208" />
 
-      <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.183" />
+      <testcase classname="subasto6.SubastaSpec" name="El mejor sigue ganando" time="0.181" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.154" />
+      <testcase classname="subasto6.SubastaSpec" name="Tres automaticos" time="0.204" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.106" />
+      <testcase classname="subasto6.SubastaSpec" name="Una oferta mejor gana, aunque hayan automaticas" time="0.242" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.137" />
+      <testcase classname="subasto6.SubastaSpec" name="Subasta esta finalizada" time="0.193" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.15" />
+      <testcase classname="subasto6.SubastaSpec" name="Solo se puede ofertar si la subasta no finalizo" time="0.107" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.142" />
+      <testcase classname="subasto6.SubastaSpec" name="Antes de terminar la subasta no se puede calificar y solo si hay un comprador" time="0.16" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.244" />
+      <testcase classname="subasto6.SubastaSpec" name="Si ya califico, no puede volver a calificar" time="0.207" />
 
-      <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.268" />
+      <testcase classname="subasto6.SubastaSpec" name="Si las razones de las calificaciones difieren, enviar mail a administrador" time="0.255" />
 
       <system-out><![CDATA[--Output from Creacion de una subasta--
 --Output from Probando ofertar y subir el precio actual--

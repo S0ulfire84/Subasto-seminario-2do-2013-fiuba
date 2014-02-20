@@ -80,23 +80,6 @@ class Subasta {
 			}
 		}
 		
-		if (categoria != null) {
-			BigDecimal incremento = this.precioActual() - this.precioBase;
-			int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
-			categoria.actualizarDensidadPromedioDeOfertasConNuevoDato( this.densidadDePrecioActual() )
-			System.out.println("estoy actualizando la densidad promedio de ofertas al finalizar subasta con "+this.densidadDePrecioActual() )
-		}
-	}
-	
-	// La densidad de precio es cuantos pesos subio el precio (en promedio) por cada oferta realizada.
-	// Sirve para recalcular las estadisticas de la categoria
-	def BigDecimal densidadDePrecioActual() {
-		BigDecimal incremento = this.precioActual() - this.precioBase;
-		int ofertasRealizadas = this.cantidadDeOfertasRealizadas();
-		
-		if (ofertasRealizadas == 0) return 1;
-	
-		return incremento/ofertasRealizadas
 	}
 	
 	def Boolean calificarVendedor(String comentario, int puntaje, String estadoTransaccion) {

@@ -40,7 +40,7 @@
 <h2>SubastaPromocionalSpec</h2>
 <h3>
                         Executed
-                        3
+                        4
                         tests
                     
                         without a single error or failure!
@@ -51,7 +51,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Funcionamiento basico</b>
 </p>
-<p class="summary">Executed in 1.734 seconds.</p>
+<p class="summary">Executed in 1.477 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -61,17 +61,27 @@
 <p>
 <span class="icon success"></span><b class="testname message success">Ofertar extiende el tiempo en 30 segundos</b>
 </p>
-<p class="summary">Executed in 0.963 seconds.</p>
+<p class="summary">Executed in 0.599 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado</b>
+<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria</b>
 </p>
-<p class="summary">Executed in 0.841 seconds.</p>
+<p class="summary">Executed in 0.441 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria</b>
+</p>
+<p class="summary">Executed in 0.284 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -81,14 +91,16 @@
 <h2>Standard output</h2>
 <pre class="stdout">--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
 <pre class="syserr">--Output from Funcionamiento basico--
 --Output from Ofertar extiende el tiempo en 30 segundos--
---Output from Al terminar una subasta con ofertas, actualiza el tiempo y el descuento realizado--
+--Output from Al terminar una subasta con ofertas menores al precio base sugerido, aumenta el descuento de la categoria--
+--Output from Al terminar una subasta con ofertas mayores al precio base sugerido pero menores al precio de venta esperado, disminuye el descuento de la categoria--
 </pre>
 </div>
 </div>
