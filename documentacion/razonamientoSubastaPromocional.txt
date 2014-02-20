@@ -1,0 +1,95 @@
+Supongamos que la subasta tenia un valor tentativo de 10, pero se ofrecio a 9 y llego a 20.
+
+Se consideraba razonable que el producto saliese a un valor de 15, pero termino llegando a 20.
+
+Digamos que es una situacion favorable y el descuento ayudo a mejorar la ganancia en un (20-15)/15 = 33% respecto del valor esperado. En principio es un buen descuento.
+
+Supongamos por ahora que si es un buen descuento, no necesita modificaciones.
+
+
+Supongamos el caso de un mal descuento. Se consideraba razonable que saliese a 15, pero apenas logro llegar a 10.
+
+El producto se ofrecio inicialmente a 9 y solo logro llegar a 10. Se obtuvo una perdida de (10-15)/15 = -33% respecto del valor esperado. Es un mal descuento. Hay que arreglarlo.
+
+Hay dos razones bien contrapuestas que pueden hacer que un descuento sea malo. Las posibilidades son:
+
+1- Se ofrecio demasiado barato y no llego a escalar demasiado
+2- Se ofrecio demasiado caro y no llego a escalar demasiado
+
+Ofrecerlo demasiado caro significa que no hubo suficiente diferencia entre el precio base y el precio con descuento. Esto es, a ojos del cliente, el descuento no fue atractivo y termino sufriendo la misma suerte que un producto normal. Esto esta mas o menos bien, digamos. Puede suceder que este sea efectivamente el mejor de los casos. De ser asi, el descuento no fue demasiado culpable, sino el producto. Esto significaria que el descuento esta dando valores demasiado bajos, habria que subirlos.
+
+Si se ofrecio demasiado barato y no llego a escalar lo suficiente, el descuento esta dando valores demasiado altos, hay que bajarlos.
+
+El calculo del descuento optimo reside en ponderar ambas situaciones y generar un cambio respecto de eso.
+
+1- Si no llego a escalar demasiado porque estaba demasiado barato, lo que se observaria es que si bien hay muchas ofertas, el valor nunca logro alcanzar un valor cercano al esperado. La palabra clave son las muchas ofertas.
+
+Como medimos si hubieron "muchas ofertas" o "pocas ofertas"? A lo mejor al finalizar una subasta podemos llevar cuenta del promedio de cantidad de ofertas y monto promedio de esas ofertas y de los dos sacar un indice: monto/cantidad de ofertas = densidad de oferta promedio de la categoria.
+
+Entonces, si la densidad de ofertas es buena, pero aun asi se llego a un valor por debajo del esperado, el descuento debe hacerse mas chico (causa 1) para que no se ofrezca tan barato.
+
+
+
+2- No alcanzo el valor esperado y la densidad de ofertas es baja. Parece que el descuento no es muy atractivo. Mejorar el descuento haciendolo mas grande (causa 2), para que atraiga una mejor densidad de ofertas.
+
+
+CONCLUSIONES:
+* hay un valor esperado. El valor esperado es un porcentaje por arriba de la base.
+
+0800-1222747
+
+
+dens prom = 10
+dens de este = 15
+
+tuvo buena dens, hay que disminuir el descuento
+
+descOpt = 50
+
+50 - (15 - 10)/15
+
+descOpt - (densNuevoDato - densProm)/densNuevoDato
+
+--------
+
+dens prom = 10
+dens de este = 5
+
+tuvo mala dens, hay que aumentar el descuento
+
+50 + (10 - 5)/10
+
+descOpt + (densProm - densNuevoDato)/densProm
+
+
+descOpt = descOpt + (densProm - densNuevoDato)/max(densProm, densNuevoDato)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
